@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="prepaid" model="mysales.types">
+			<field name="name">Prepaid</field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="mysales_form_view" model="ir.ui.view">
+			<field name="name">mysale.form.view</field>
+			<field name="model">mysales.maindata</field>
+			<field name="arch" type="xml">
+				<form string="My sales">
+					<header>
+						<field name="state" widget="statusbar" />
+					</header>
+					<sheet>
+						<group>
+							<div class="oe_title">
+								<h1>
+									<field name="name" />
+								</h1>
+							</div>
+							<field name="customer" />
+							<field name="contract_number" />
+							<field name="sales_lines_ids">
+								<tree>
+									<field name="name"></field>
+									<field name="stockable_products"></field>
+								</tree>
+							</field>
+							<field name="price" />
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+					    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+					    <field name="message_ids" widget="mail_thread"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="mysales_tree_view" model="ir.ui.view">
+			<field name="name">mysale.tree.view</field>
+			<field name="model">mysales.maindata</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="customer" />
+					<field name="contract_number" />
+					<field name="sales_lines_ids" widget="many2many_tags" />
+					<field name="price" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="mysales_search_view" model="ir.ui.view">
+			<field name="name">mysales.search.view</field>
+			<field name="model">mysales.maindata</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="customer" />
+					<field name="contract_number" />
+				</search>
+			</field>
+		</record>
+
+		<record id="mysales_action" model="ir.actions.act_window">
+			<field name="name">Illusions Sales</field>
+			<field name="res_model">mysales.maindata</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+			id="illusions_sales_maindata"
+			name="Illusion Sales"
+			parent="illusions_sales_main_menuitem"
+			action="mysales_action"
+			sequence="20"
+			/>
+
+	</data>
+</odoo>

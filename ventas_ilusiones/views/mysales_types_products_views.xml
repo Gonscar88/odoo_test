@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		
+		<record id="mysales_types_products_form_view" model="ir.ui.view">
+			<field name="name">mysales_types_products.form.view</field>
+			<field name="model">mysales.typesofsales_products</field>
+			<field name="arch" type="xml">
+				<form string="Sales types">
+					<sheet>
+						<group>
+							<field name="name" options="{'no_quick_create': True}"/>
+							<field name="stockable_products" options="{'no_quick_create': True}">
+								<tree editable="bottom">
+									<field name="default_code" />
+									<field name="name" />
+									<field name="list_price" />
+									<field name="type" />
+									<field name="qty_available" />
+								</tree>
+							</field>
+						</group>
+					</sheet>				
+				</form>
+			</field>
+		</record>
+
+		<record id="mysales_types_products_tree_view" model="ir.ui.view">
+			<field name="name">mysales_types_products.tree.view</field>
+			<field name="model">mysales.typesofsales_products</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="stockable_products" widget="many2many_tags" />
+					<field name="mysale_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="mysales_types_products_search_view" model="ir.ui.view">
+			<field name="name">mysales_types_products.search.view</field>
+			<field name="model">mysales.typesofsales_products</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="mysale_id" />
+				</search>
+			</field>
+		</record>
+	
+		<record id="mysales_types_products_action" model="ir.actions.act_window">
+			<field name="name">Illusions types of sales with products</field>
+            <field name="res_model">mysales.typesofsales_products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+			id="mysales_types_products_menuitem"
+			name="Type of sales with products"
+			parent="illusions_sales_main_menuitem"
+			action="mysales_types_products_action"
+			sequence="20"
+			/>
+
+	</data>
+</odoo>

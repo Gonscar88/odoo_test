@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="mysales_types_form_view" model="ir.ui.view">
+			<field name="name">mysales_types.form.view</field>
+			<field name="model">mysales.types</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								<field name="name" readonly="True"/>
+							</h1>
+						</div>
+						<group>
+							<field name="reservedstock" />
+							<field name="confirmedstock" />
+							<field name="realstock" readonly="True"/>
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+					    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+					    <field name="message_ids" widget="mail_thread"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="mysales_types_tree_view" model="ir.ui.view">
+			<field name="name">mysales_types.tree.view</field>
+			<field name="model">mysales.types</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="reservedstock" />
+					<field name="confirmedstock" />
+					<field name="realstock" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="mysales_types_search_view" model="ir.ui.view">
+			<field name="name">mysales_types.search.view</field>
+			<field name="model">mysales.types</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+				</search>
+			</field>	
+		</record>
+
+		<record id="mysales_types_action" model="ir.actions.act_window">
+			<field name="name">Illusions types of sales</field>
+			<field name="res_model">mysales.types</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+			id="mysales_types_menuitem"
+			name="Types of sales"
+			parent="illusions_sales_main_menuitem"
+			action="mysales_types_action"
+			sequence="10"
+			/>
+
+	</data>
+</odoo>

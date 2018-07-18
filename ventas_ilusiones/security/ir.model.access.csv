@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mysales_types,access_mysales_types,model_mysales_types,,1,0,0,0
+access_mysales_maindata,access_mysales_maindata,model_mysales_maindata,,1,0,0,0
+access_mysales_typesofsales_products,access_mysales_typesofsales_products,model_mysales_typesofsales_products,,1,0,0,0
