@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-19 17:38-0500\n"
-"PO-Revision-Date: 2018-07-19 17:49-0500\n"
+"PO-Revision-Date: 2018-07-19 18:13-0500\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -275,12 +275,12 @@ msgstr "Cambiar a confirmada"
 #. module: ventas_ilusiones
 #: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
 msgid "Set to done"
-msgstr "¿Cambiar a terminada?"
+msgstr "Terminada"
 
 #. module: ventas_ilusiones
 #: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
 msgid "Set to quotation"
-msgstr "¿Cambiar a cotización?"
+msgstr "Cotización"
 
 #. module: ventas_ilusiones
 #: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_state

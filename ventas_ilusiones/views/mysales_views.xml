@@ -32,7 +32,7 @@
 							string="Set to done" 
 							class="oe_highlight"
 							confirm="When a sale is done can't be cancelled, do you want to proceed?"
-							states="draft,quotation,confirm,done"
+							states="draft,quotation,confirm"
 							/>
 
 						<button 
