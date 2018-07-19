@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
-		
+
 		<record id="mysales_types_products_form_view" model="ir.ui.view">
 			<field name="name">mysales_types_products.form.view</field>
 			<field name="model">mysales.typesofsales_products</field>
@@ -9,16 +9,51 @@
 				<form string="Sales types">
 					<sheet>
 						<group>
-							<field name="name" options="{'no_quick_create': True}"/>
-							<field name="stockable_products" options="{'no_quick_create': True}">
+							<field name="type" widget="selection"/>
+							<field name="name" invisible="True" />
+							<!-- Both fields are showed if the type is activation -->
+							<!-- Is only showed if the type of sale is prepaid -->
+							<field name="stockable_products" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Plan'])]}">
 								<tree editable="bottom">
-									<field name="default_code" />
-									<field name="name" />
-									<field name="list_price" />
-									<field name="type" />
-									<field name="qty_available" />
+									<field name="product_id"/>
 								</tree>
 							</field>
+
+							<!-- Is only showed if the type of sale is plan-->
+							<field name="services_ids" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Prepaid'])]}">	<tree editable="bottom">
+									<field name="service_id"/>
+								</tree>
+							</field>
+
+							<!-- Required fields for Prepaid -->
+
+							<field name="serial_number" 
+								attrs="{
+									'invisible': [('name', '!=', 'Prepaid')], 
+									'required': [('name', '=', 'Prepaid')],
+								}"
+							/>
+
+							<field name="contract_number" 
+								attrs="{
+									'invisible': [('name', '!=', 'Prepaid')], 
+									'required': [('name', '=', 'Prepaid')],
+								}"
+							 />
+
+							<field name="suggested_price" 
+								attrs="{
+									'invisible': [('name', '!=', 'Prepaid')],
+								}"
+								/>
+
+							<field name="price" 
+								attrs="{
+									'invisible': [('name', '!=', 'Prepaid')], 
+									'required': [('name', '=', 'Prepaid')],
+								}"
+								/>
+
 						</group>
 					</sheet>				
 				</form>
@@ -33,6 +68,8 @@
 					<field name="name" />
 					<field name="stockable_products" widget="many2many_tags" />
 					<field name="mysale_id" />
+					<field name="contract_number" />
+					<field name="price" />
 				</tree>
 			</field>
 		</record>
@@ -44,6 +81,8 @@
 				<search>
 					<field name="name" />
 					<field name="mysale_id" />
+					<field name="contract_number" />
+					<field name="price" />
 				</search>
 			</field>
 		</record>

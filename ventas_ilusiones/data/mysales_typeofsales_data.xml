@@ -6,5 +6,13 @@
 			<field name="name">Prepaid</field>
 		</record>
 
+		<record id="plan" model="mysales.types">
+			<field name="name">Plan</field>
+		</record>
+
+		<record id="activation" model="mysales.types">
+			<field name="name">Activation</field>
+		</record>
+
 	</data>
 </odoo>

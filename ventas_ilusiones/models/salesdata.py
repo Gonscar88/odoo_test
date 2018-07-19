@@ -9,21 +9,12 @@ class SalesData(models.Model):
     name = fields.Char(
         string="Sale Number",
         default=lambda self: 'MS000X',
+        required=True,
     )
 
     customer = fields.Many2one(
         'res.partner',
         string="Customer",
-        required=True,
-    )
-
-    contract_number = fields.Char(
-        string="Contract number",
-        required=True,
-    )
-
-    price = fields.Float(
-        string="Price",
         required=True,
     )
 
@@ -47,6 +38,23 @@ class SalesData(models.Model):
         required=True
     )
 
+    @api.multi
+    def settoquotation(self):
+        self.state = 'quotation'
+
+    @api.multi
+    def settoconfirm(self):
+        self.state = 'confirm'
+
+    @api.multi
+    def settodone(self):
+        self.state = 'done'
+
+    @api.multi
+    def settocancell(self):
+        self.state = 'cancel'
+
+
     @api.model
     def create(self, vals):
         if vals.get('name', 'MS000X') == 'MS000X':
@@ -54,3 +62,5 @@ class SalesData(models.Model):
                 'mysales_maindata'
             ) or 'MS000X'
         return super(SalesData, self).create(vals)
+
+

@@ -13,11 +13,6 @@
 								<field name="name" readonly="True"/>
 							</h1>
 						</div>
-						<group>
-							<field name="reservedstock" />
-							<field name="confirmedstock" />
-							<field name="realstock" readonly="True"/>
-						</group>
 					</sheet>
 					<div class="oe_chatter">
 					    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
@@ -33,9 +28,6 @@
 			<field name="arch" type="xml">
 				<tree>
 					<field name="name" />
-					<field name="reservedstock" />
-					<field name="confirmedstock" />
-					<field name="realstock" />
 				</tree>
 			</field>
 		</record>

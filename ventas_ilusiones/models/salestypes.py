@@ -11,17 +11,3 @@ class SalesTypes(models.Model):
         required=True,
         track_visibility='on_change',
     )
-
-    realstock = fields.Integer(
-        string="Real stock",
-        track_visibility='on_change',
-        store=True,
-    )
-
-    confirmedstock = fields.Integer(
-        string="Confirmed Stock"
-    )
-
-    reservedstock = fields.Integer(
-        string="Reserved Stock"
-    )

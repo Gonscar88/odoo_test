@@ -1,30 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
+
 		<record id="mysales_form_view" model="ir.ui.view">
 			<field name="name">mysale.form.view</field>
 			<field name="model">mysales.maindata</field>
 			<field name="arch" type="xml">
 				<form string="My sales">
 					<header>
+						<!-- All the buttons to set states in the form view -->
+						<button 
+							type="object" 
+							name="settoquotation"  
+							string="Set to quotation" 
+							class="oe_highlight"
+							confirm="Send the quotation??"
+							states="draft"
+							/>
+
+						<button 
+							type="object" 
+							name="settoconfirm"  
+							string="Set to confirmed" 
+							class="oe_highlight"
+							confirm="The sale is confirmed"
+							states="draft,quotation"
+							/>
+
+						<button 
+							type="object" 
+							name="settodone"  
+							string="Set to done" 
+							class="oe_highlight"
+							confirm="The sale is done?"
+							states="draft,quotation,confirmed"
+							/>
+
+						<button 
+							type="object" 
+							name="settoquotation"  
+							string="Set to quotation" 
+							class=""
+							confirm="Send the quotation??"
+							states="quotation,confirmed,done"
+							/>
+
+						<button 
+							type="object" 
+							name="settocancel"  
+							string="Cancel the sale" 
+							class=""
+							confirm="Are you sure you want to cancel the quotation?"
+							states="draft,quotation,confirmed,done"
+							/>
+
 						<field name="state" widget="statusbar" />
 					</header>
 					<sheet>
+						<div class="oe_title">
+							<h1>
+								<field name="name" readonly="True"/>
+							</h1>
+						</div>
 						<group>
-							<div class="oe_title">
-								<h1>
-									<field name="name" />
-								</h1>
-							</div>
 							<field name="customer" />
-							<field name="contract_number" />
 							<field name="sales_lines_ids">
 								<tree>
-									<field name="name"></field>
-									<field name="stockable_products"></field>
+									<field name="name" />
+									<field name="stockable_products" widget="many2many_tags"/>
 								</tree>
 							</field>
-							<field name="price" />
 						</group>
 					</sheet>
 					<div class="oe_chatter">
@@ -42,9 +87,8 @@
 				<tree>
 					<field name="name" />
 					<field name="customer" />
-					<field name="contract_number" />
 					<field name="sales_lines_ids" widget="many2many_tags" />
-					<field name="price" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>
@@ -56,7 +100,6 @@
 				<search>
 					<field name="name" />
 					<field name="customer" />
-					<field name="contract_number" />
 				</search>
 			</field>
 		</record>
