@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError, ValidationError
 
 
 class SalesData(models.Model):
@@ -39,6 +40,41 @@ class SalesData(models.Model):
     )
 
     @api.multi
+    def setnewstockproducts(self):
+        # Update quantity on hand for all the sold products
+        stock_discount = 0
+        for lineas in self.sales_lines_ids:
+            if lineas.stockable_products:
+                for producto in lineas.stockable_products:
+                    stock_discount += 1
+                    product_obj = producto.product_id
+                    product_stock = product_obj.qty_available
+                    # Search the current stock of the product
+                    stock_qnt_obj = producto.env['stock.quant'].sudo().search(
+                        [
+                            ('product_id.id', '=', product_obj.id)
+                        ]
+                    )
+                    if stock_qnt_obj:
+                        stock_qnt_obj = stock_qnt_obj[-1]
+                        """ Ask for the stock and 
+                        confirm that is enough to sell all the products """
+                        if product_stock > 0 and product_stock > stock_discount:
+                            new_stock = int(product_stock) - stock_discount
+                            stock_qnt_obj.sudo().write(
+                                {
+                                    'quantity': new_stock,
+                                }
+                            )
+                        else:
+                            raise UserError(
+                                _(
+                                    'You cant set to done this sale,'
+                                    'there is not enough stock'
+                                )
+                            )
+
+    @api.multi
     def settoquotation(self):
         self.state = 'quotation'
 
@@ -48,6 +84,7 @@ class SalesData(models.Model):
 
     @api.multi
     def settodone(self):
+        self.setnewstockproducts()
         self.state = 'done'
 
     @api.multi
@@ -62,5 +99,3 @@ class SalesData(models.Model):
                 'mysales_maindata'
             ) or 'MS000X'
         return super(SalesData, self).create(vals)
-
-

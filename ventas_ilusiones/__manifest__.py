@@ -31,6 +31,8 @@
     'demo': [],
 
     'data': [
+        'security/mysales_grouops.xml',
+        'security/ir.model.access.csv',
         'data/mysales_typeofsales_data.xml',
         'data/mysalesmaindata_consecutive.xml',
         'views/menu.xml',

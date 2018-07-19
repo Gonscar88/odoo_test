@@ -11,16 +11,15 @@ class ProductStockableSaleTypeRelation(models.Model):
     )
 
     product_id = fields.Many2one(
-        'product.template',
+        'product.product',
         string="Products",
-        domain="[('type', '=', 'product')]",
+        domain="[('type', '=', 'product'), ('qty_available', '>', 0)]",
         required=True,
     )
 
     saletype_id = fields.Many2one(
         'mysales.typesofsales_products',
         string="Type of sale related",
-        required=True,
     )
 
 
@@ -33,7 +32,7 @@ class ServicesSaleTypeRelation(models.Model):
     )
 
     service_id = fields.Many2one(
-        'product.template',
+        'product.product',
         string="Services",
         domain="[('type', '=', 'service')]",
         required=True,
@@ -42,5 +41,4 @@ class ServicesSaleTypeRelation(models.Model):
     saletype_id = fields.Many2one(
         'mysales.typesofsales_products',
         string="Type of sale related",
-        required=True,
     )

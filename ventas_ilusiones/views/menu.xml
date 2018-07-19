@@ -5,6 +5,7 @@
 			id="illusions_sales_main_menuitem"
 			name="Illusions Sales"
 			web_icon="ventas_ilusiones,static/description/icon.png"
+			groups="access_mysales_group_manager"
 			/>
 	</data>
 </odoo>

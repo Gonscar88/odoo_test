@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="group_mysales_category" model="ir.module.category">
+			<field name="name">MySales Access</field>
+			<field name="description">Access to illussion sales module</field>
+			<field name="sequence">20</field>
+		</record>
+
+		<record id="access_mysales_group_manager" model="res.groups">
+			<field name="name">MySales Manager</field>
+			<field name="category_id" ref="group_mysales_category"/>
+		</record>
+
+	</data>
+</odoo>

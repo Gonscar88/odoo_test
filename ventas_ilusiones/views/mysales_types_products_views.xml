@@ -19,14 +19,7 @@
 								</tree>
 							</field>
 
-							<!-- Is only showed if the type of sale is plan-->
-							<field name="services_ids" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Prepaid'])]}">	<tree editable="bottom">
-									<field name="service_id"/>
-								</tree>
-							</field>
-
 							<!-- Required fields for Prepaid -->
-
 							<field name="serial_number" 
 								attrs="{
 									'invisible': [('name', '!=', 'Prepaid')], 
@@ -53,6 +46,21 @@
 									'required': [('name', '=', 'Prepaid')],
 								}"
 								/>
+
+							<!-- Required fields for Plan -->
+							<field name="monthly_rent_price" 
+								attrs="{
+									'invisible': [('name', '!=', 'Plan')], 
+									'required': [('name', '=', 'Plan')],
+								}"
+							/>
+							
+							<!-- Is only showed if the type of sale is plan-->
+							<field name="services_ids" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Prepaid'])]}">
+								<tree editable="bottom">
+									<field name="service_id"/>
+								</tree>
+							</field>
 
 						</group>
 					</sheet>				

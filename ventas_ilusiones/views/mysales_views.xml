@@ -14,7 +14,6 @@
 							name="settoquotation"  
 							string="Set to quotation" 
 							class="oe_highlight"
-							confirm="Send the quotation??"
 							states="draft"
 							/>
 
@@ -32,8 +31,8 @@
 							name="settodone"  
 							string="Set to done" 
 							class="oe_highlight"
-							confirm="The sale is done?"
-							states="draft,quotation,confirmed"
+							confirm="When a sale is done can't be cancelled, do you want to proceed?"
+							states="draft,quotation,confirm,done"
 							/>
 
 						<button 
@@ -42,7 +41,7 @@
 							string="Set to quotation" 
 							class=""
 							confirm="Send the quotation??"
-							states="quotation,confirmed,done"
+							states="quotation,confirm"
 							/>
 
 						<button 
@@ -51,7 +50,7 @@
 							string="Cancel the sale" 
 							class=""
 							confirm="Are you sure you want to cancel the quotation?"
-							states="draft,quotation,confirmed,done"
+							states="draft,quotation,confirmed"
 							/>
 
 						<field name="state" widget="statusbar" />
@@ -63,11 +62,54 @@
 							</h1>
 						</div>
 						<group>
-							<field name="customer" />
-							<field name="sales_lines_ids">
+							<field name="customer" 
+								attrs="{
+									'readonly': [('state', '=', 'done')],
+								}" 
+							/>
+							<field name="sales_lines_ids" 
+								attrs="{
+									'readonly': [('state', '=', 'done')],
+								}" 
+							>
 								<tree>
+									<field name="mysale_id" invisible="True" />
 									<field name="name" />
-									<field name="stockable_products" widget="many2many_tags"/>
+
+									<field name="stockable_products" 
+										attrs="{
+											'invisible': [('name', 'in', ['Plan'])],
+										}" 
+										widget="many2many_tags"
+									>
+										<tree editable="bottom">
+											<field name="product_id"/>
+										</tree>
+									</field>
+
+									<field name="services_ids" options="{'no_quick_create': True}" 
+										attrs="{
+											'invisible': [('name', 'in', ['Prepaid'])],
+										}"
+										widget="many2many_tags" >
+										<tree editable="bottom">
+											<field name="service_id"/>
+										</tree>
+									</field>
+
+									<field name="serial_number" 
+										attrs="{
+											'invisible': [('name', '!=', 'Prepaid')], 
+											'required': [('name', '=', 'Prepaid')],
+										}"
+									/>
+
+									<field name="contract_number" 
+										attrs="{
+											'invisible': [('name', '!=', 'Prepaid')], 
+											'required': [('name', '=', 'Prepaid')],
+										}"
+									 />
 								</tree>
 							</field>
 						</group>

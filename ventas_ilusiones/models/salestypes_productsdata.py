@@ -53,6 +53,10 @@ class SalesTypesData(models.Model):
         string="Price",
     )
 
+    monthly_rent_price = fields.Float(
+        string="Monthly Rent Price"
+    )
+
     @api.multi
     @api.depends('stockable_products')
     def getsuggestedprice(self):
