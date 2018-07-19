@@ -99,17 +99,31 @@
 
 									<field name="serial_number" 
 										attrs="{
-											'invisible': [('name', '!=', 'Prepaid')], 
-											'required': [('name', '=', 'Prepaid')],
+											'invisible': [('name', 'in', ['Plan'])], 
+											'required': [('name', 'not in', ['Plan'])],
 										}"
 									/>
 
 									<field name="contract_number" 
 										attrs="{
-											'invisible': [('name', '!=', 'Prepaid')], 
-											'required': [('name', '=', 'Prepaid')],
+											'invisible': [('name', 'in', ['Plan'])], 
+											'required': [('name', 'not in', ['Plan'])],
 										}"
 									 />
+
+									 <field name="monthly_rent_price" 
+										attrs="{
+											'invisible': [('name', 'not in', ['Activation'])], 
+											'required': [('name', 'in', ['Activation'])],
+										}"
+									/>
+
+									<field name="serial_number" 
+										attrs="{
+											'invisible': [('name', 'not in', ['Activation'])], 
+											'required': [('name', 'in', ['Activation'])],
+										}"
+									/>
 								</tree>
 							</field>
 						</group>

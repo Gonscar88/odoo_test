@@ -17,6 +17,11 @@ class ProductStockableSaleTypeRelation(models.Model):
         required=True,
     )
 
+    serial_number = fields.Char(
+        string="Serial Number",
+        required=True,
+    )
+
     saletype_id = fields.Many2one(
         'mysales.typesofsales_products',
         string="Type of sale related",

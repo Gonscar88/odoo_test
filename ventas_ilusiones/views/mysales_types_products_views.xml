@@ -12,25 +12,34 @@
 							<field name="type" widget="selection"/>
 							<field name="name" invisible="True" />
 							<!-- Both fields are showed if the type is activation -->
+							
 							<!-- Is only showed if the type of sale is prepaid -->
 							<field name="stockable_products" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Plan'])]}">
 								<tree editable="bottom">
 									<field name="product_id"/>
+									<field name="serial_number"/>
+								</tree>
+							</field>
+
+							<!-- Is only showed if the type of sale is plan-->
+							<field name="services_ids" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Prepaid'])]}">
+								<tree editable="bottom">
+									<field name="service_id"/>
 								</tree>
 							</field>
 
 							<!-- Required fields for Prepaid -->
 							<field name="serial_number" 
 								attrs="{
-									'invisible': [('name', '!=', 'Prepaid')], 
-									'required': [('name', '=', 'Prepaid')],
+									'invisible': [('name', 'in', ['Plan'])], 
+									'required': [('name', 'not in', ['Plan'])],
 								}"
 							/>
 
 							<field name="contract_number" 
 								attrs="{
-									'invisible': [('name', '!=', 'Prepaid')], 
-									'required': [('name', '=', 'Prepaid')],
+									'invisible': [('name', 'in', ['Plan'])], 
+									'required': [('name', 'not in', ['Plan'])],
 								}"
 							 />
 
@@ -46,21 +55,24 @@
 									'required': [('name', '=', 'Prepaid')],
 								}"
 								/>
+							
 
-							<!-- Required fields for Plan -->
+							<!-- Required fields for activation -->
+							<!-- Also required for plan -->
 							<field name="monthly_rent_price" 
 								attrs="{
-									'invisible': [('name', '!=', 'Plan')], 
-									'required': [('name', '=', 'Plan')],
+									'invisible': [('name', 'in', ['Prepaid'])], 
+									'required': [('name', 'in', ['Activation', 'Plan'])],
 								}"
 							/>
-							
-							<!-- Is only showed if the type of sale is plan-->
-							<field name="services_ids" options="{'no_quick_create': True}" attrs="{'invisible': [('name', 'in', ['Prepaid'])]}">
-								<tree editable="bottom">
-									<field name="service_id"/>
-								</tree>
-							</field>
+
+
+							<field name="protect_equipment" 
+								attrs="{
+									'invisible': [('name', 'not in', ['Activation'])], 
+									'required': [('name', 'in', ['Activation'])],
+								}"
+							/>
 
 						</group>
 					</sheet>				

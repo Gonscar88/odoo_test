@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class SalesTypesData(models.Model):
@@ -43,6 +43,12 @@ class SalesTypesData(models.Model):
         string="Contract number",
     )
 
+    _sql_constraints = [
+        ('serial_number_unique',
+         'UNIQUE(serial_number)',
+         _("The serial number must be unique")),
+    ]
+
     suggested_price = fields.Float(
         string="Suggested price",
         compute='getsuggestedprice',
@@ -55,6 +61,15 @@ class SalesTypesData(models.Model):
 
     monthly_rent_price = fields.Float(
         string="Monthly Rent Price"
+    )
+
+    protect_equipment = fields.Selection(
+        [
+            ('any', 'Nothing'),
+            ('prot55', 'Protect 55'),
+            ('prot105', 'Protect 105'),
+            ('prot155', 'Protect 155'),
+        ]
     )
 
     @api.multi
