@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Practica Odoo",
+    'name': "Practica Odoo Ventas",
 
     'summary':
         """

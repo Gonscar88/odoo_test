@@ -172,7 +172,7 @@
 			name="Illusion Sales"
 			parent="illusions_sales_main_menuitem"
 			action="mysales_action"
-			sequence="20"
+			sequence="10"
 			/>
 
 	</data>

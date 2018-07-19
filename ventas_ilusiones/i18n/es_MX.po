@@ -1,0 +1,363 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ventas_ilusiones
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-19 17:38-0500\n"
+"PO-Revision-Date: 2018-07-19 17:49-0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: \n"
+"Language: es_MX\n"
+
+#. module: ventas_ilusiones
+#: model:ir.module.category,description:ventas_ilusiones.group_mysales_category
+msgid "Access to illussion sales module"
+msgstr "Acceder al módulo de ventas Ilusiones"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Are you sure you want to cancel the quotation?"
+msgstr "¿Estas seguro en cancelar la cotización?"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Cancel the sale"
+msgstr "Cancelar la venta"
+
+#. module: ventas_ilusiones
+#: selection:mysales.maindata,state:0
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: ventas_ilusiones
+#: selection:mysales.maindata,state:0
+msgid "Confirmed"
+msgstr "Confirmada"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_contract_number
+msgid "Contract number"
+msgstr "Número de contrato"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_create_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_create_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_create_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_create_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_create_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_create_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_create_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_create_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_customer
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_display_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_display_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_display_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_display_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: ventas_ilusiones
+#: selection:mysales.maindata,state:0
+msgid "Done"
+msgstr "Terminada"
+
+#. module: ventas_ilusiones
+#: selection:mysales.maindata,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_id
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_id
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_id
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_id
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.menu,name:ventas_ilusiones.illusions_sales_maindata
+msgid "Illusion Sales"
+msgstr "Ventas Ilusiones"
+
+#. module: ventas_ilusiones
+#: model:ir.actions.act_window,name:ventas_ilusiones.mysales_action
+#: model:ir.ui.menu,name:ventas_ilusiones.illusions_sales_main_menuitem
+msgid "Illusions Sales"
+msgstr "Ventas Ilusiones"
+
+#. module: ventas_ilusiones
+#: model:ir.actions.act_window,name:ventas_ilusiones.mysales_types_action
+msgid "Illusions types of sales"
+msgstr "Ilusiones tipos de ventas"
+
+#. module: ventas_ilusiones
+#: model:ir.actions.act_window,name:ventas_ilusiones.mysales_types_products_action
+msgid "Illusions types of sales with products"
+msgstr "Ilusiones tipos de ventas con productos"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata___last_update
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation___last_update
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation___last_update
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types___last_update
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products___last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_write_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_write_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_write_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_write_uid
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_write_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_write_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_write_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_write_date
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_write_date
+msgid "Last Updated on"
+msgstr "Última modificación el"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_monthly_rent_price
+msgid "Monthly Rent Price"
+msgstr "Precio de renta mensual"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "My sales"
+msgstr "Mis ventas"
+
+#. module: ventas_ilusiones
+#: model:ir.module.category,name:ventas_ilusiones.group_mysales_category
+msgid "MySales Access"
+msgstr "Acceso a MySales"
+
+#. module: ventas_ilusiones
+#: model:res.groups,name:ventas_ilusiones.access_mysales_group_manager
+msgid "MySales Manager"
+msgstr "Administrador de MySales"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_name
+msgid "Name"
+msgstr "Name"
+
+#. module: ventas_ilusiones
+#: selection:mysales.typesofsales_products,protect_equipment:0
+msgid "Nothing"
+msgstr "Ninguno"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_price
+msgid "Price"
+msgstr "Precio"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_name
+msgid "Product"
+msgstr "Producto"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_product_id
+msgid "Products"
+msgstr "Productos"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_stockable_products
+msgid "Products combo"
+msgstr "Combos de productos"
+
+#. module: ventas_ilusiones
+#: selection:mysales.typesofsales_products,protect_equipment:0
+msgid "Protect 105"
+msgstr "Protección 105"
+
+#. module: ventas_ilusiones
+#: selection:mysales.typesofsales_products,protect_equipment:0
+msgid "Protect 155"
+msgstr "Protección 155"
+
+#. module: ventas_ilusiones
+#: selection:mysales.typesofsales_products,protect_equipment:0
+msgid "Protect 55"
+msgstr "Protección 55"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_protect_equipment
+msgid "Protect Equipment"
+msgstr "Protección del equipo"
+
+#. module: ventas_ilusiones
+#: selection:mysales.maindata,state:0
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_name
+msgid "Sale Number"
+msgstr "Número de venta"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_sales_lines_ids
+msgid "Sale lines"
+msgstr "Lineas de ventas"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_mysale_id
+msgid "Sale related"
+msgstr "Venta relacionada"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_types_products_form_view
+msgid "Sales types"
+msgstr "Tipos de ventas"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Send the quotation??"
+msgstr "¿Cambiar a cotización?"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_serial_number
+msgid "Serial Number"
+msgstr "Número de serie"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_serial_number
+msgid "Serial number"
+msgstr "Número de serie"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_service_id
+msgid "Services"
+msgstr "Servicios"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_services_ids
+msgid "Services combo"
+msgstr "Combo de Servicios"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Set to confirmed"
+msgstr "Cambiar a confirmada"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Set to done"
+msgstr "¿Cambiar a terminada?"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "Set to quotation"
+msgstr "¿Cambiar a cotización?"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_maindata_state
+msgid "State"
+msgstr "Estado"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_suggested_price
+msgid "Suggested price"
+msgstr "Precio sugerido"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "The sale is confirmed"
+msgstr "La venta está confirmada"
+
+#. module: ventas_ilusiones
+#: code:addons/ventas_ilusiones/models/salestypes_productsdata.py:49
+#: sql_constraint:mysales.typesofsales_products:0
+#, python-format
+msgid "The serial number must be unique"
+msgstr "El número serial debe ser unico"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,help:ventas_ilusiones.field_mysales_typesofsales_products_suggested_price
+msgid "This is 15% above the total of the  list price of the products"
+msgstr "Este es 15% sobre el precio de venta de los productos"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_types_name
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_typesofsales_products_type
+msgid "Type of sale"
+msgstr "Tipo de venta"
+
+#. module: ventas_ilusiones
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_product_saletype_relation_saletype_id
+#: model:ir.model.fields,field_description:ventas_ilusiones.field_mysales_services_saletype_relation_saletype_id
+msgid "Type of sale related"
+msgstr "Tipo de venta relacionada"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.menu,name:ventas_ilusiones.mysales_types_products_menuitem
+msgid "Type of sales with products"
+msgstr "Tipo de ventas con productos"
+
+#. module: ventas_ilusiones
+#: model:ir.ui.view,arch_db:ventas_ilusiones.mysales_form_view
+msgid "When a sale is done can't be cancelled, do you want to proceed?"
+msgstr "¿Cuando una venta se termina no puede ser cancelada, quieres proceder?"
+
+#. module: ventas_ilusiones
+#: code:addons/ventas_ilusiones/models/salesdata.py:71
+#, python-format
+msgid "You cant set to done this sale,there is not enough stock"
+msgstr "No puedes marcar como terminada la venta, no hay sufuciente stock de los productos"
+
+#. module: ventas_ilusiones
+#: model:ir.model,name:ventas_ilusiones.model_mysales_maindata
+msgid "mysales.maindata"
+msgstr ""
+
+#. module: ventas_ilusiones
+#: model:ir.model,name:ventas_ilusiones.model_mysales_product_saletype_relation
+msgid "mysales.product_saletype_relation"
+msgstr ""
+
+#. module: ventas_ilusiones
+#: model:ir.model,name:ventas_ilusiones.model_mysales_services_saletype_relation
+msgid "mysales.services_saletype_relation"
+msgstr ""
+
+#. module: ventas_ilusiones
+#: model:ir.model,name:ventas_ilusiones.model_mysales_types
+msgid "mysales.types"
+msgstr ""
+
+#. module: ventas_ilusiones
+#: model:ir.model,name:ventas_ilusiones.model_mysales_typesofsales_products
+msgid "mysales.typesofsales_products"
+msgstr ""
